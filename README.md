@@ -1,0 +1,1 @@
+GreenCorridor proje iskeleti oluþturuldu.
