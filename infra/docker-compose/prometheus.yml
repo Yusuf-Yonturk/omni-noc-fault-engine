@@ -1,0 +1,34 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'alarm-ingestion-service'
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ['alarm-ingestion-service:8081']
+
+  - job_name: 'correlation-engine'
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ['correlation-engine:8082']
+
+  - job_name: 'incident-service'
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ['incident-service:8083']
+
+  - job_name: 'notification-service'
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ['notification-service:8084']
+
+  - job_name: 'dashboard-service'
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ['dashboard-service:8085']
+
+  - job_name: 'alarm-simulator'
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ['alarm-simulator:8086']
